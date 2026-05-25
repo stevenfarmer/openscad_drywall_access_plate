@@ -48,7 +48,7 @@ Do not export `all` unless you intentionally want one combined STL blob.
 
 - 0.20 mm layer height
 - 3–4 walls
-- 15–25% infill
+- 7–15% gyroid infill
 - No supports in standard orientations
 - Print at least four wedge keys
 
