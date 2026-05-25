@@ -20,6 +20,8 @@ Replace these with real renders/photos/screenshots before posting unless you wan
 8. OpenSCAD customizer screenshot
 9. Dimensional diagram showing what to measure
 10. Optional install GIF/video
+11. Close-up of wall insert flange support in slicer
+12. Installed rear view showing wedges locked against clamp ring
 
 ---
 
@@ -36,6 +38,30 @@ The panel installs using a rear clamp ring and wedge-lock system that compresses
 It actually looks intentional.
 
 Wild concept.
+
+---
+
+# TESTED PRINT SETUP
+
+Tested successfully with:
+
+* Bambu P1P
+* 0.4 mm nozzle
+* PLA
+* 0.20 mm layer height
+* 3–4 walls
+* 7–15% gyroid infill
+* Bambu Studio `Tree (Auto)` supports with `Snug` style for the wall insert flange
+
+Approximate print time and filament usage will vary by configured panel size, because this is parametric and your drywall hole may be either reasonable or evidence of crimes.
+
+Suggested common starter sizes to generate/export:
+
+* 120 x 120 mm opening
+* 180 x 180 mm opening
+* 215 x 215 mm opening, if your printer bed and exclusion zones allow it
+
+If you are printing near your machine's max build area, check the actual slicer build plate limits and exclusion zones before assuming the advertised bed size is real. Printer marketing departments are chaos goblins with nicer fonts.
 
 ---
 
@@ -102,6 +128,8 @@ Use:
 * `tight` only if your printer is dialed in and you enjoy tempting fate
 
 Start with `normal` unless you have a good reason not to.
+
+If you are unsure, print a smaller test size first. It is cheaper to waste a little plastic than to discover your printer is dimensionally spicy after a full-size wall part.
 
 ## Step 4 — Pick Your Cover
 
@@ -251,6 +279,8 @@ The preview shows the wedge keys flipped into their intended installed orientati
 
 This matters because wedges are simple right up until they are upside down and pissing you off.
 
+Recommended image for this section: show one correct wedge orientation and one wrong orientation. Label them clearly. People will absolutely install them upside down if you let the universe make decisions.
+
 ## Two Cover Variants
 
 ### Blank Cover
@@ -373,6 +403,91 @@ Print flat.
 Print flat on the large wedge surface.
 
 Print at least four wedge keys.
+
+---
+
+# COMMON PRINT FAILURES
+
+## Stringing or ugly underside under the wall insert flange
+
+Use support under the front flange.
+
+Bambu Studio `Tree (Auto)` with `Snug` style worked well in testing.
+
+## Cover is too tight after printing
+
+Increase:
+
+```scad
+cover_lip_clearance = 0.35;
+```
+
+Or use:
+
+```scad
+fit_mode = "loose";
+```
+
+## Cover is too loose after printing
+
+Enable detents:
+
+```scad
+cover_detents_enabled = true;
+cover_detent_size = 0.35;
+```
+
+Or slightly reduce:
+
+```scad
+cover_lip_clearance = 0.20;
+```
+
+## Wedge keys are hard to insert
+
+Increase:
+
+```scad
+key_slot_clearance = 0.35;
+```
+
+Or use:
+
+```scad
+retention_strength = "light";
+```
+
+## Clamp ring is hard to fit through the opening
+
+Reduce:
+
+```scad
+clamp_ring_overlap = 10;
+```
+
+Or generate a slightly larger opening size if you are still in planning mode.
+
+---
+
+# PACKAGED STL SUGGESTIONS
+
+If you are publishing this as a MakerWorld model, consider uploading a few ready-to-print STL/3MF sets in addition to the OpenSCAD source.
+
+Recommended sets:
+
+* 120 x 120 mm blank cover set
+* 180 x 180 mm blank cover set
+* 180 x 180 mm cable notch set
+* 215 x 215 mm blank cover set, if it fits your printer profile cleanly
+
+Each set should include:
+
+* wall insert
+* cover plate
+* clamp ring
+* four wedge keys
+
+The OpenSCAD file is the real magic, but MakerWorld users also like when the printer can just go brrrr without a side quest.
 
 ---
 
