@@ -53,13 +53,15 @@ Tested successfully with:
 * 7–15% gyroid infill
 * Bambu Studio `Tree (Auto)` supports with `Snug` style for the wall insert flange
 
+Maximum opening size I was able to successfully print on my Bambu P1P was **200 x 200 mm**.
+
 Approximate print time and filament usage will vary by configured panel size, because this is parametric and your drywall hole may be either reasonable or evidence of crimes.
 
 Suggested common starter sizes to generate/export:
 
 * 120 x 120 mm opening
 * 180 x 180 mm opening
-* 215 x 215 mm opening, if your printer bed and exclusion zones allow it
+* 200 x 200 mm opening, tested as the practical max on my Bambu P1P
 
 If you are printing near your machine's max build area, check the actual slicer build plate limits and exclusion zones before assuming the advertised bed size is real. Printer marketing departments are chaos goblins with nicer fonts.
 
@@ -478,7 +480,7 @@ Recommended sets:
 * 120 x 120 mm blank cover set
 * 180 x 180 mm blank cover set
 * 180 x 180 mm cable notch set
-* 215 x 215 mm blank cover set, if it fits your printer profile cleanly
+* 200 x 200 mm blank cover set, tested as the practical max on my Bambu P1P
 
 Each set should include:
 
@@ -888,6 +890,7 @@ Perfect for:
 * The preview wedges are intentionally flipped/oriented to demonstrate correct installation direction.
 * The wall insert no longer has the cable notch; cable notch lives on the removable cover only.
 * OpenSCAD F6 render may ignore useful transparency/color behavior, so layout mode is included for easier visual checking.
+* On my Bambu P1P, **200 x 200 mm** was the largest opening size I was able to actually print successfully.
 * If you need the largest possible panel for your printer, check your printer’s actual usable bed area and exclusion zones before assuming the full advertised build volume is real. Printer marketing departments are chaos goblins with nicer fonts.
 
 ---
