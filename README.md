@@ -49,12 +49,13 @@ Do not export `all` unless you intentionally want one combined STL blob.
 - 0.20 mm layer height
 - 3–4 walls
 - 7–15% gyroid infill
-- No supports in standard orientations
+- Supports are generally not needed for the cover plate, clamp ring, or wedge keys
+- For the wall insert, support under the front flange is recommended; Bambu Studio tree supports using `Tree (Auto)` with `Snug` style worked well in testing
 - Print at least four wedge keys
 
 ## Print orientation
 
-- Wall insert: front flange face-down
+- Wall insert: sleeve pointing upward, front flange on the build plate; add support under flange overhangs if your slicer flags them
 - Cover plate: visible face upward
 - Clamp ring: flat
 - Wedge keys: flat on the large wedge surface
